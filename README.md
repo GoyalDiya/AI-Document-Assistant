@@ -49,6 +49,9 @@ Answer / Summary Generation
 
 This hybrid retrieval approach improves accuracy by combining semantic understanding with exact keyword matching.
 
+
+
+
 🛠️ Tech Stack
 Frontend
 
@@ -84,23 +87,20 @@ Semantic Search (FAISS)
 
 Keyword Search (BM25)
 
-📂 Project Structure
-AI-Document-Assistant
-│
-├── app.py
-├── requirements.txt
-├── README.md
-└── assets
-     └── app-ui.png
+
+
 ⚙️ Installation
 1️⃣ Clone the Repository
 git clone https://github.com/yourusername/ai-document-assistant.git
 cd ai-document-assistant
+
 2️⃣ Create Virtual Environment
 python -m venv venv
 source venv/bin/activate
+
 3️⃣ Install Dependencies
 pip install -r requirements.txt
+
 4️⃣ Install System Dependencies
 
 For OCR support:
@@ -109,6 +109,7 @@ Mac:
 
 brew install tesseract
 brew install poppler
+
 5️⃣ Add Gemini API Key
 
 Create a .env file:
@@ -125,6 +126,8 @@ streamlit run app.py
 The app will start at:
 
 http://localhost:8501
+
+
 💡 Example Use Cases
 
 • Research paper exploration
@@ -133,6 +136,8 @@ http://localhost:8501
 • Company reports analysis
 • Knowledge base chatbot
 • Study material summarization
+
+
 
 🧠 Key Concepts Demonstrated
 
@@ -146,6 +151,8 @@ This project demonstrates several modern AI engineering techniques:
 • OCR for Image-based PDFs
 • LLM Integration
 • Conversational Interfaces
+
+
 
 📈 Future Improvements
 
