@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import time
+import tempfile
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -103,17 +104,19 @@ if uploaded_files:
 
         for uploaded_file in uploaded_files:
 
-            with open(uploaded_file.name, "wb") as f:
-                f.write(uploaded_file.getbuffer())
+            # Save file temporarily instead of project folder
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
+                tmp_file.write(uploaded_file.getbuffer())
+                temp_path = tmp_file.name
 
             # Extract normal text
-            loader = PyPDFLoader(uploaded_file.name)
+            loader = PyPDFLoader(temp_path)
             docs = loader.load()
 
             documents.extend(docs)
 
-            # Extract text from images using OCR
-            ocr_text = extract_text_from_images(uploaded_file.name)
+            # OCR extraction
+            ocr_text = extract_text_from_images(temp_path)
 
             if ocr_text.strip():
                 documents.append(
